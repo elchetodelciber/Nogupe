@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PaginadeInicioComponent } from './componentes/paginade-inicio/paginade-inicio.component';
-import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { PaginadeloginComponent } from './componentes/paginadelogin/paginadelogin.component';
-import { PaginaderegistroComponent } from './componentes/paginaderegistro/paginaderegistro.component';
-import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
+import { PaginadeInicioComponent } from './Componentes/paginade-inicio/paginade-inicio.component';
+import { NavbarComponent } from './Componentes/navbar/navbar.component';
+import { PaginadeloginComponent } from './Componentes/paginadelogin/paginadelogin.component';
+import { PaginaderegistroComponent } from './Componentes/paginaderegistro/paginaderegistro.component';
+import { NotFoundPageComponent } from './Componentes/not-found-page/not-found-page.component';
+import {ZonaInternaComponent} from './Componentes/zona-interna/zona-interna.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NotFoundPageComponent } from './componentes/not-found-page/not-found-pa
     NavbarComponent,
     PaginadeloginComponent,
     PaginaderegistroComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    ZonaInternaComponent
   ],
   imports: [
     BrowserModule,
