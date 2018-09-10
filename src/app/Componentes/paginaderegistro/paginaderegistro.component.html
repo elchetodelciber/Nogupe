@@ -2,28 +2,31 @@
     <div class="col-md-4 mx-auto">
         <div class="card mb-3">
             <h3 class="card-header text-center">Registro</h3>
-            <div class="card-body">
-            <div class="example-container">
-                <mat-form-field>
-                    <input matInput placeholder="Ingresa tu email" [formControl]="email" required>
-                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-                </mat-form-field>   
+            
+            <div class="card-body"> 
+
+                    <div class="example-container">
+                            <mat-form-field>
+                                <input matInput placeholder="Ingresa tu email" [formControl]="email" required #mail> 
+                                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>   
+                    </div>
+                    <div class="example-container">
+                        <mat-form-field>
+                            <input matInput placeholder="Ingresa tu Contraseña" [type]="hide ? 'password' : 'text'" #pass1>
+                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Repite tu Contraseña" [type]="hide ? 'password' : 'text'" #pass2>
+                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="DNI" type="number" #dni>
+                        </mat-form-field>
+                    </div>
+                            <button (click)="CreateUser(mail.value,pass1.value,pass2.value,dni.value)"  class="btn btn-success btn-block">Registrarme</button> <br> 
             </div>
-            <div class="example-container">
-                <mat-form-field>
-                    <input matInput placeholder="Ingresa tu Contraseña" [type]="hide ? 'password' : 'text'">
-                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-                </mat-form-field>
-                <mat-form-field>
-                        <input matInput placeholder="Repite tu Contraseña" [type]="hide ? 'password' : 'text'">
-                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-                    </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="DNI" type="number">
-                </mat-form-field>
-            </div>
-                <button type="button" class="btn btn-success btn-block">Registrarme</button> <br>
-            </div>
+           
         </div>
     </div> 
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-paginaderegistro',
@@ -15,9 +16,24 @@ export class PaginaderegistroComponent implements OnInit {
         this.email.hasError('email') ? 'Not a valid email' :
             '';
   }
-  constructor() { }
+  constructor(
+    public autService:AuthService
+  ) { }
 
   ngOnInit() {
   }
 
+  CreateUser(mail:string,pass1:string,pass2:string,dni:string){
+    console.log(mail);
+    if(pass1==pass2){
+      this.autService.registerUser(mail, pass1)
+    .then((res)=>{
+      console.log('Ok');
+      console.log(res);
+    }).catch((err)=>{
+      console.log(err);
+    });
+    }
+    
+  }
 }
